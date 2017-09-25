@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="echarts.min.js"></script>
+</head>
+<body>
+	<div id="main" style="width: 600px;height:400px;"></div>
+</body>
+</html>
+<script>
+// var main = document.getElementById("main");
+var myChart = echarts.init(document.getElementById("main"));
+console.log(myChart);
+ var option = {
+            title: {
+                text: '个人档案',
+                subtext:"身高（cm） 体重（kg）年龄",
+                textStyle:{
+                	color:"#000"
+                }
+            },
+             toolbox: {
+			      show: true,
+			      feature: {
+			        dataZoom: {
+			          yAxisIndex: 'none'
+			        },
+			        dataView: {readOnly: false},
+			        magicType: {type: ['line', 'bar']},
+			        restore: {},
+			        saveAsImage: {}
+			      }
+			    },
+            tooltip: {},
+            legend: {
+                data:['王林','刘建超',"王晓雄","陈妍池","江苏华","胡龙华"]
+            },
+            xAxis: {
+                data: ["身高","体重","年龄"]
+            },
+            yAxis: {},
+            series: [{
+                name: '王林',
+                type: 'bar',
+                data: [171, 75, 26]
+            },{
+            	name: '刘建超',
+                type: 'bar',
+                data: [186, 88, 22]
+            },{
+            	name: '王晓雄',
+                type: 'bar',
+                data: [172, 78, 23]
+            },{
+            	name: '陈妍池',
+                type: 'bar',
+                data: [161, 58, 22]
+            },{
+            	name: '江苏华',
+                type: 'bar',
+                data: [169, 88, 22]
+            },{
+            	name: '胡龙华',
+                type: 'bar',
+                data: [170, 68, 22]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
